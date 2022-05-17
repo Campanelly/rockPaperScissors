@@ -1,7 +1,7 @@
 let computerChoice;
 let playerChoice = prompt("rock, paper or scissors?").toLowerCase();
 let result;
-let counter;
+
 
 function computerPlay(){
     
@@ -18,26 +18,9 @@ function computerPlay(){
 return computerChoice;
 };
 
-function gameRound (computerChoice, playerChoice){
-    
-    if (playerChoice == "paper"){
-        if (computerChoice == "rock")
-            result = "You win.";
-            counter = true;
-
-        }
-        else if (computerChoice == "scissors"){
-            result = "I win.";
-            counter = false;
-        }
-        else {
-            result = "It's a tie!";
-
-        }
-}
-  
+ 
 
 
-gameRound(computerPlay(), playerChoice)
+gameRound(computerPlay())
 
 console.log(`Your choice: ${playerChoice}. My choice: ${computerChoice}. ${result}` )
