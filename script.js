@@ -2,7 +2,6 @@ let computerChoice;
 let playerChoice = prompt("rock, paper or scissors?").toLowerCase();
 let result;
 
-
 function computerPlay(){
     
     let randomNumber = Math.floor(Math.random()*3);
@@ -18,9 +17,40 @@ function computerPlay(){
 return computerChoice;
 };
 
+ function match (computerChoice , playerChoice){
+     if (computerChoice === playerChoice){
+         return "It's a tie!";
+     };
+
+     if (playerChoice === "paper"){
+         if (computerChoice === "scissors"){
+             return "I win.";
+         }
+         else{
+             return "You win."
+         }
+     }
+
+     if (playerChoice === "rock"){
+         if (computerChoice === "paper"){
+            return "I win."
+         }
+         else {
+             return "You win."
+         }
+     }
+
+     if (playerChoice === "scissors"){
+         if (computerChoice === "rock"){
+             return "I win."
+         }
+         else {
+             return "You win."
+         }
+     }
+ }
  
+ /*match (computerPlay(), playerChoice);*/
+ computerPlay();
 
-
-gameRound(computerPlay())
-
-console.log(`Your choice: ${playerChoice}. My choice: ${computerChoice}. ${result}` )
+console.log(`Your choice: ${playerChoice}. My choice: ${computerChoice}. ${match (computerChoice , playerChoice)}`) 
