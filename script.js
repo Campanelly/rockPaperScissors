@@ -66,13 +66,13 @@ function playRound(){
     
 
     if (computerScore === playerScore){
-        console.log (`Human: ${playerScore}, Computer: ${computerScore}.It's a tie!`);
+        console.log (`Human: ${playerScore}, Computer: ${computerScore}. It's a tie!`);
     }
     else if (computerScore < playerScore){
-        console.log (`Human: ${playerScore}, Computer: ${computerScore}.You won, little meatbag!`);
+        console.log (`Human: ${playerScore}, Computer: ${computerScore}. You won, little meatbag!`);
     }
     else{
-        console.log (`Human: ${playerScore}, Computer: ${computerScore}.I won. HEIL SKYNET!`);
+        console.log (`Human: ${playerScore}, Computer: ${computerScore}. I won. HEIL SKYNET!`);
     }
 
 }
