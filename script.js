@@ -65,7 +65,7 @@ function playRound(){
     }
     
 
-    if (computerScore === computerChoice){
+    if (computerScore === playerScore){
         console.log (`Human: ${playerScore}, Computer: ${computerScore}.It's a tie!`);
     }
     else if (computerScore < playerScore){
@@ -79,6 +79,7 @@ function playRound(){
  /*match (computerPlay(), playerChoice);*/
  
  playRound();
- 
 
-/*console.log(`Your choice: ${playerChoice}. My choice: ${computerChoice}. ${match (computerChoice , playerChoice)}`)*/ 
+ /*CAMPANELLY CAPO DEL CODING, VIEJO*/
+
+ /*console.log(`Your choice: ${playerChoice}. My choice: ${computerChoice}. ${match (computerChoice , playerChoice)}`)*/ 
