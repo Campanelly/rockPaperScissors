@@ -61,18 +61,18 @@ function playRound(){
         computerPlay();
         playerChoice = prompt("rock, paper or scissors?").toLowerCase();
         match (computerChoice, playerChoice)
-        console.log(`Match n° ${i}. Your choice: ${playerChoice}. My choice: ${computerChoice}.`)
+        document.write (`<p> Match n° ${i}. Your choice: ${playerChoice}. My choice: ${computerChoice}.</p>`)
     }
     
 
     if (computerScore === playerScore){
-        window.alert(`Human: ${playerScore}, Computer: ${computerScore}. It's a tie!`);
+        document.write (`<p>Human: ${playerScore}, Computer: ${computerScore}. It's a tie!</p>`);
     }
     else if (computerScore < playerScore){
-        window.alert (`Human: ${playerScore}, Computer: ${computerScore}. You won, little meatbag!`);
+        document.write(`<p>Human: ${playerScore}, Computer: ${computerScore}. You won, little meatbag!</p>`);
     }
     else{
-        window.alert (`Human: ${playerScore}, Computer: ${computerScore}. I won. HEIL SKYNET!`);
+        document.write (`<p>Human: ${playerScore}, Computer: ${computerScore}. I won. HEIL SKYNET!</p>`);
     }
 
 }
