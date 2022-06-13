@@ -1,5 +1,5 @@
+
 let computerChoice;
-/*let playerChoice = prompt("rock, paper or scissors?").toLowerCase();*/
 let computerScore = 0;
 let playerScore = 0;
 
@@ -56,6 +56,7 @@ function match (computerChoice , playerChoice){
     }
 return computerChoice;
 };
+/*
 function playRound(){
     for (i=1 ; i<6 ; i++){
         computerPlay();
@@ -76,10 +77,10 @@ function playRound(){
     }
 
 }
- /*match (computerPlay(), playerChoice);*/
+
  
  playRound();
 
- /*CAMPANELLY CAPO DEL CODING, VIEJO*/
-
- /*console.log(`Your choice: ${playerChoice}. My choice: ${computerChoice}. ${match (computerChoice , playerChoice)}`)*/ 
+ 
+*/
+ 
