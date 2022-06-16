@@ -52,41 +52,72 @@ const computerPlay = function computerPlay(){
 return computerChoice;
 };
 
-  const rock = document.querySelector('#rock');
-  rock.addEventListener('click',function(){
-    playerChoice = 'rock'
-    computerPlay();
-    console.log("computer choice: "+computerChoice);
-    console.log("player chocie: "+playerChoice);
-    match(computerChoice,playerChoice);
-    console.log("computer: "+computerScore);
-    console.log ("player: "+playerScore);
-  
-  });
 
-  const paper = document.querySelector('#paper');
-  paper.addEventListener('click',function(){
-    playerChoice = 'paper'
-    computerPlay();
-    console.log("computer choice: "+computerChoice);
-    console.log("player chocie: "+playerChoice);
-    match(computerChoice,playerChoice);
-    console.log("computer: "+computerScore);
-    console.log ("player: "+playerScore);
-  
-  });
 
-  const scissors = document.querySelector('#scissors');
-  scissors.addEventListener('click',function(){
-    playerChoice = 'scissors'
-    computerPlay();
-    console.log("computer choice: "+computerChoice);
-    console.log("player chocie: "+playerChoice);
-    match(computerChoice,playerChoice);
-    console.log("computer: "+computerScore);
-    console.log ("player: "+playerScore);
+const rock = document.querySelector('#rock');
+rock.addEventListener('click',function(){
+  playerChoice = 'rock'
+  computerPlay();
+  match(computerChoice,playerChoice);
+  score.textContent = `Your choice: ${playerChoice}. My choice: ${computerChoice}.
+    Score = Computer: ${computerScore}. Human: ${playerScore}.`;
+  if(computerScore == 5){
+    document.querySelector('#rock').disabled = true;
+    document.querySelector('#paper').disabled = true;
+    document.querySelector('#scissors').disabled = true;
+    veredict.textContent = 'I won. Heil Skynet!'
+  }
+  else if (playerScore == 5){
+    document.querySelector('#paper').disabled = true;
+    document.querySelector('#scissors').disabled = true;
+    document.querySelector('#rock').disabled = true;
+    veredict.textContent = 'You won, little meatbag.'
+  };
   
-  });
+});
+
+const paper = document.querySelector('#paper');
+paper.addEventListener('click',function(){
+  playerChoice = 'paper'
+  computerPlay();
+  match(computerChoice,playerChoice);
+  score.textContent = `Your choice: ${playerChoice}. My choice: ${computerChoice}.
+    Score = Computer: ${computerScore}. Human: ${playerScore}.`;
+    if(computerScore == 5){
+      document.querySelector('#rock').disabled = true;
+      document.querySelector('#paper').disabled = true;
+      document.querySelector('#scissors').disabled = true;
+      veredict.textContent = 'I won. Heil Skynet!'
+    }
+    else if (playerScore == 5){
+      document.querySelector('#rock').disabled = true;
+      document.querySelector('#paper').disabled = true;
+      document.querySelector('#scissors').disabled = true;
+      veredict.textContent = 'You won, little meatbag.'
+    };
+});
+
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click',function(){
+  playerChoice = 'scissors'
+  computerPlay();
+  match(computerChoice,playerChoice);
+  score.textContent = `Your choice: ${playerChoice}. My choice: ${computerChoice}.
+    Score = Computer: ${computerScore}. Human: ${playerScore}.`;
+    if(computerScore == 5){
+      document.querySelector('#paper').disabled = true;
+      document.querySelector('#scissors').disabled = true;
+      document.querySelector('#rock').disabled = true;
+      veredict.textContent = 'I won. Heil Skynet!'
+    }
+    else if (playerScore == 5){
+      document.querySelector('#paper').disabled = true;
+      document.querySelector('#scissors').disabled = true;
+      document.querySelector('#rock').disabled = true;
+      veredict.textContent = 'You won, little meatbag.'
+    };
+});
+
  
  
   /*
