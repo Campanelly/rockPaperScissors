@@ -58,8 +58,8 @@ rock.addEventListener('click',function(){
   computerPlay();
   match(computerChoice,playerChoice);
 
-  score.textContent = `Your choice: ${playerChoice}. My choice: ${computerChoice}.
-    Score = Computer: ${computerScore}. Human: ${playerScore}.`;
+  selections.textContent = `Your choice: ${playerChoice}. My choice: ${computerChoice}.`;
+  partialScore.textContent = `Computer: ${computerScore}. Human: ${playerScore}.`;
 
   if(computerScore == 5){
     const buttons = document.querySelectorAll('button');
@@ -85,8 +85,8 @@ paper.addEventListener('click',function(){
   computerPlay();
   match(computerChoice,playerChoice);
 
-  score.textContent = `Your choice: ${playerChoice}. My choice: ${computerChoice}.
-    Score = Computer: ${computerScore}. Human: ${playerScore}.`;
+  selections.textContent = `Your choice: ${playerChoice}. My choice: ${computerChoice}.`;
+  partialScore.textContent = `Computer: ${computerScore}. Human: ${playerScore}.`;
 
     if(computerScore == 5){
       const buttons = document.querySelectorAll('button');
@@ -110,8 +110,8 @@ scissors.addEventListener('click',function(){
   computerPlay();
   match(computerChoice,playerChoice);
 
-  score.textContent = `Your choice: ${playerChoice}. My choice: ${computerChoice}.
-    Score = Computer: ${computerScore}. Human: ${playerScore}.`;
+  selections.textContent = `Your choice: ${playerChoice}. My choice: ${computerChoice}.`;
+  partialScore.textContent = `Computer: ${computerScore}. Human: ${playerScore}.`;
 
     if(computerScore == 5){
       const buttons = document.querySelectorAll('button');

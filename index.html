@@ -5,15 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campa: a Nelly.</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class = "buttons">
-        <button id = "rock">Rock</button>
-        <button id = "paper">Paper</button>
-        <button id = "scissors">Scissors</button>
+    <div class = "welcome">
+        <h1>Greetings, Human.</h1>
+        <h2>Let's play 5 rounds of Rock, Paper, Scissors.</h2>
+        <h3>Choose:</h3>
     </div>
-    <div id = "score"></div>
-    <div id="veredict"></div>
+    <div class = "buttons">
+        <button class="button-6" role="button" id="rock">rock</button>
+        <button class="button-6" role="button" id="paper">paper</button>
+        <button class="button-6" role="button" id="scissors">scissors</button>
+    </div>
+    
+    <div id = "score">
+        <p id ="selections"></p>
+        <p id ="partialScore"></p>
+        <p id ="veredict"></p>
+    </div>
+   
     
 </body>
 <script src="script.js"></script>
