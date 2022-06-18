@@ -1,7 +1,7 @@
 html {
     background-color: black;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode','Times New Roman' sans-serif;
 }
 
@@ -16,7 +16,15 @@ html {
     display: flex;
     justify-content: center;
 }
-
+#score{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+p{
+    font-size: x-large;
+}
 .button-6 {
   align-items: center;
   background-color: #FFFFFF;

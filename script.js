@@ -54,19 +54,33 @@ return computerChoice;
 };
 
 const end = function(){
-  if(computerScore == 5){
-    const buttons = document.querySelectorAll('button');
+  if(computerScore == 3){
+    const buttons = document.querySelectorAll('.button-6');
     for (item of buttons){
       item.disabled = true;
     };      
     veredict.textContent = 'I won. Heil Skynet!'
+    const refresh = document.createElement ('button');
+    refresh.innerText = 'Play Again'
+    refresh.classList = 'button-6'
+    document.querySelector("#score");
+    score.appendChild(refresh);
+    refresh.addEventListener("click", ()=>window.location.reload());
+
   }
-  else if (playerScore == 5){
-    const buttons = document.querySelectorAll('button');
+  else if (playerScore == 3){
+    const buttons = document.querySelectorAll('.play');
     for (item of buttons){
       item.disabled = true;
     };
     veredict.textContent = 'You won, little meatbag.'
+    const refresh = document.createElement ('button');
+    refresh.innerText = 'Play Again'
+    refresh.classList = 'button-6'
+    document.querySelector("#score");
+    score.appendChild(refresh);
+    refresh.addEventListener("click", ()=>window.location.reload());
+
   };
 };
 
