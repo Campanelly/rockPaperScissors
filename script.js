@@ -3,6 +3,7 @@ let computerChoice;
 let playerChoice;
 let computerScore = 0;
 let playerScore = 0;
+let round = 0;
 
 const match= function match (computerChoice , playerChoice){
     
@@ -52,31 +53,33 @@ const computerPlay = function computerPlay(){
 return computerChoice;
 };
 
+const end = function(){
+  if(computerScore == 5){
+    const buttons = document.querySelectorAll('button');
+    for (item of buttons){
+      item.disabled = true;
+    };      
+    veredict.textContent = 'I won. Heil Skynet!'
+  }
+  else if (playerScore == 5){
+    const buttons = document.querySelectorAll('button');
+    for (item of buttons){
+      item.disabled = true;
+    };
+    veredict.textContent = 'You won, little meatbag.'
+  };
+};
+
 const rock = document.querySelector('#rock');
 rock.addEventListener('click',function(){
   playerChoice = 'rock'
   computerPlay();
   match(computerChoice,playerChoice);
+  round +=1;
 
-  selections.textContent = `Your choice: ${playerChoice}. My choice: ${computerChoice}.`;
-  partialScore.textContent = `Computer: ${computerScore}. Human: ${playerScore}.`;
-
-  if(computerScore == 5){
-    const buttons = document.querySelectorAll('button');
-      for (item of buttons){
-        item.disabled = true;
-      };
-    veredict.textContent = 'I won. Heil Skynet!'
-  }
-  else if (playerScore == 5){
-    
-    const buttons = document.querySelectorAll('button');
-      for (item of buttons){
-        item.disabled = true;
-      };
-    veredict.textContent = 'You won, little meatbag.'
-  };
-  
+  selections.innerText = `Round ${round}.Your choice: ${playerChoice}. My choice: ${computerChoice}.`;
+  partialScore.innerText = `Computer: ${computerScore}. Human: ${playerScore}.`;
+  end();
 });
 
 const paper = document.querySelector('#paper');
@@ -84,24 +87,12 @@ paper.addEventListener('click',function(){
   playerChoice = 'paper'
   computerPlay();
   match(computerChoice,playerChoice);
+  round +=1;
 
-  selections.textContent = `Your choice: ${playerChoice}. My choice: ${computerChoice}.`;
-  partialScore.textContent = `Computer: ${computerScore}. Human: ${playerScore}.`;
+  selections.innerText = `Round ${round}.Your choice: ${playerChoice}. My choice: ${computerChoice}.`;
+  partialScore.innerText = `Computer: ${computerScore}. Human: ${playerScore}.`;
+  end();
 
-    if(computerScore == 5){
-      const buttons = document.querySelectorAll('button');
-      for (item of buttons){
-        item.disabled = true;
-      };
-      veredict.textContent = 'I won. Heil Skynet!'
-    }
-    else if (playerScore == 5){
-      const buttons = document.querySelectorAll('button');
-      for (item of buttons){
-        item.disabled = true;
-      };
-      veredict.textContent = 'You won, little meatbag.'
-    };
 });
 
 const scissors = document.querySelector('#scissors');
@@ -109,23 +100,10 @@ scissors.addEventListener('click',function(){
   playerChoice = 'scissors'
   computerPlay();
   match(computerChoice,playerChoice);
+  round +=1;
 
-  selections.textContent = `Your choice: ${playerChoice}. My choice: ${computerChoice}.`;
-  partialScore.textContent = `Computer: ${computerScore}. Human: ${playerScore}.`;
-
-    if(computerScore == 5){
-      const buttons = document.querySelectorAll('button');
-      for (item of buttons){
-        item.disabled = true;
-      };      
-      veredict.textContent = 'I won. Heil Skynet!'
-    }
-    else if (playerScore == 5){
-      const buttons = document.querySelectorAll('button');
-      for (item of buttons){
-        item.disabled = true;
-      };
-      veredict.textContent = 'You won, little meatbag.'
-    };
+  selections.innerText = `Round ${round}.Your choice: ${playerChoice}. My choice: ${computerChoice}.`;
+  partialScore.innerText = `Computer: ${computerScore}. Human: ${playerScore}.`;
+  end();
+  
 });
- 
