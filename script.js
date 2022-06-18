@@ -1,48 +1,44 @@
+
 let computerChoice;
-/*let playerChoice = prompt("rock, paper or scissors?").toLowerCase();*/
+let playerChoice;
 let computerScore = 0;
 let playerScore = 0;
+let round = 0;
 
-function match (computerChoice , playerChoice){
+const match= function match (computerChoice , playerChoice){
     
-     if (computerChoice === playerChoice){
+  if (computerChoice === playerChoice){
         return computerScore += 0; 
-        
-         
-     };
+  };
 
-     if (playerChoice === "paper"){
-         if (computerChoice === "scissors"){
-            return computerScore += 1;
-            
-            
-             
-         }
-         else{
-            return playerScore +=1;
+  if (playerChoice === "paper"){
+    if (computerChoice === "scissors"){
+      return computerScore += 1;
+    }  
+    else{
+      return playerScore +=1;
+    }
+  }
 
-         }
-     }
+  if (playerChoice === "rock"){
+    if (computerChoice === "paper"){
+      return computerScore +=1;
+    }
+    else {
+      return playerScore +=1;
+    }
+  }
 
-     if (playerChoice === "rock"){
-         if (computerChoice === "paper"){
-            return computerScore +=1;
-         }
-         else {
-            return playerScore +=1;
-         }
-     }
-
-     if (playerChoice === "scissors"){
-         if (computerChoice === "rock"){
-            return computerScore +=1;
-         }
-         else {
-            return playerScore +=1;
-         }
-     }
- }
- function computerPlay(){
+  if (playerChoice === "scissors"){
+    if (computerChoice === "rock"){
+      return computerScore +=1;
+    }
+    else {
+      return playerScore +=1;
+    }
+  }
+}
+const computerPlay = function computerPlay(){
     
     let randomNumber = Math.floor(Math.random()*3);
     if(randomNumber == 0){
@@ -56,30 +52,72 @@ function match (computerChoice , playerChoice){
     }
 return computerChoice;
 };
-function playRound(){
-    for (i=1 ; i<6 ; i++){
-        computerPlay();
-        playerChoice = prompt("rock, paper or scissors?").toLowerCase();
-        match (computerChoice, playerChoice)
-        document.write (`<p> Match n° ${i}. Your choice: ${playerChoice}. My choice: ${computerChoice}.</p>`)
-    }
-    
 
-    if (computerScore === playerScore){
-        document.write (`<p>Human: ${playerScore}, Computer: ${computerScore}. It's a tie!</p>`);
-    }
-    else if (computerScore < playerScore){
-        document.write(`<p>Human: ${playerScore}, Computer: ${computerScore}. You won, little meatbag!</p>`);
-    }
-    else{
-        document.write (`<p>Human: ${playerScore}, Computer: ${computerScore}. I won. HEIL SKYNET!</p>`);
-    }
+const end = function(){
+  if(computerScore == 3){
+    const buttons = document.querySelectorAll('.button-6');
+    for (item of buttons){
+      item.disabled = true;
+    };      
+    veredict.textContent = 'I won. Heil Skynet!'
+    const refresh = document.createElement ('button');
+    refresh.innerText = 'Play Again'
+    refresh.classList = 'button-6'
+    document.querySelector("#score");
+    score.appendChild(refresh);
+    refresh.addEventListener("click", ()=>window.location.reload());
 
-}
- /*match (computerPlay(), playerChoice);*/
- 
- playRound();
+  }
+  else if (playerScore == 3){
+    const buttons = document.querySelectorAll('.play');
+    for (item of buttons){
+      item.disabled = true;
+    };
+    veredict.textContent = 'You won, little meatbag.'
+    const refresh = document.createElement ('button');
+    refresh.innerText = 'Play Again'
+    refresh.classList = 'button-6'
+    document.querySelector("#score");
+    score.appendChild(refresh);
+    refresh.addEventListener("click", ()=>window.location.reload());
 
- /*CAMPANELLY CAPO DEL CODING, VIEJO*/
+  };
+};
 
- /*console.log(`Your choice: ${playerChoice}. My choice: ${computerChoice}. ${match (computerChoice , playerChoice)}`)*/ 
+const rock = document.querySelector('#rock');
+rock.addEventListener('click',function(){
+  playerChoice = 'rock'
+  computerPlay();
+  match(computerChoice,playerChoice);
+  round +=1;
+
+  selections.innerText = `Round ${round}.Your choice: ${playerChoice}. My choice: ${computerChoice}.`;
+  partialScore.innerText = `Computer: ${computerScore}. Human: ${playerScore}.`;
+  end();
+});
+
+const paper = document.querySelector('#paper');
+paper.addEventListener('click',function(){
+  playerChoice = 'paper'
+  computerPlay();
+  match(computerChoice,playerChoice);
+  round +=1;
+
+  selections.innerText = `Round ${round}.Your choice: ${playerChoice}. My choice: ${computerChoice}.`;
+  partialScore.innerText = `Computer: ${computerScore}. Human: ${playerScore}.`;
+  end();
+
+});
+
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click',function(){
+  playerChoice = 'scissors'
+  computerPlay();
+  match(computerChoice,playerChoice);
+  round +=1;
+
+  selections.innerText = `Round ${round}.Your choice: ${playerChoice}. My choice: ${computerChoice}.`;
+  partialScore.innerText = `Computer: ${computerScore}. Human: ${playerScore}.`;
+  end();
+  
+});
