@@ -1,2 +1,5 @@
 # rockPaperScissors
+
+PROYECTO EN DESARROLLO/WORK IN PROGRESS
+
 New Project
